@@ -1,0 +1,11 @@
+.not-found {
+  background-color: #282828;
+  color: #e50914;
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1.2em;
+  max-width: 600px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}

@@ -1,0 +1,152 @@
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: calc(100vh - 80px);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #f1f1f1;
+  padding: 20px;
+  box-sizing: border-box;
+  padding-top: 100px;
+}
+
+.spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.tv {
+  width: 80px;
+  height: 80px;
+  background-color: #e50914;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: spin 2s linear infinite;
+}
+
+.antenna {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  width: 50px;
+  height: 0;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+}
+
+.antenna-bar {
+  width: 4px;
+  height: 20px;
+  background-color: #e50914;
+  border-radius: 2px;
+  position: absolute;
+  animation: pulse 1s infinite alternate;
+}
+
+.antenna-bar.left {
+  left: 0;
+  transform: rotate(-45deg);
+  transform-origin: bottom left;
+}
+
+.antenna-bar.right {
+  right: 0;
+  transform: rotate(45deg);
+  transform-origin: bottom right;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(1.5);
+  }
+}
+
+.tv .screen {
+  width: 80%;
+  height: 80%;
+  background-color: #141414;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.loading-bars {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  animation: loading 1s infinite ease-in-out;
+}
+
+.bar {
+  width: 8px;
+  height: 100%;
+  background-color: #e50914;
+  animation: bar 1s infinite ease-in-out;
+}
+
+.bar:nth-child(1) {
+  animation-delay: 0s;
+}
+.bar:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.bar:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.bar:nth-child(4) {
+  animation-delay: 0.3s;
+}
+.bar:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+@keyframes loading {
+  0% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0.5);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes bar {
+  0%,
+  100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0.5);
+  }
+}
+
+.spinner p {
+  margin-top: 20px;
+  font-size: 1em;
+  text-align: center;
+  color: #f1f1f1;
+}
+
+.slow-connection-warning {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: 1px solid #e50914;
+  border-radius: 5px;
+  background-color: rgba(229, 9, 20, 0.1);
+  color: #e50914;
+  font-size: 0.9em;
+  text-align: center;
+}
